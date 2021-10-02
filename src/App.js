@@ -9,7 +9,7 @@ function App() {
     fetch('https://jaspervdj.be/lorem-markdownum/markdown.txt')
     .then((response) => response.text())
     .then((response) => {setContent(response);});
-  }, [content]);
+  }, []);
 
   return (
     <div className="App">
@@ -21,7 +21,11 @@ function App() {
       </section>
       <div className="container is-fullhd">
         <div className="notification">
-          <Document title={'Terms and Conditions'} content={content}/>
+          {Document({
+            title: 'Terms and Conditions',
+            content: content
+          })}
+          {/* <Document title={} content={content}/> */}
         </div>
       </div>
     </div>
