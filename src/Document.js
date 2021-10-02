@@ -5,26 +5,19 @@ const Document = (props) => {
 
     const enable = () => {
         const scrolled = document.documentElement.scrollTop;
-        if (scrolled > 0) {
+        console.log(scrolled);
+        if (scrolled <= 0) {
             setEnabled(true);
-        } else if (scrolled <= 0){
+        } else {
             setEnabled(false);
         };
     };
 
-    const scrolltoBottom = () => {
-        window.scrollTo({
-            top: document.documentElement.scrollHeight,
-            behavior: 'auto'
-        });
-    };
-
-    window.addEventListener('scroll', enable);
     return(
-        <div className='content' onScroll={scrolltoBottom}>
+        <div className='content'>
             <h1 className='title'>{props.title}</h1>
-            <div style={{overflowY:'auto', width: 900}}>{props.content}</div>
-            <button disabled={disabledButton}>I agree</button>
+            <div style={{overflowY:'scroll', height:400, width:800, textAlign:'justify', padding:20}} onScroll={enable}>{props.content}</div>
+            <button disabled={disabledButton} style={{margin: 20}}>I agree</button>
         </div>  
     );
   };
