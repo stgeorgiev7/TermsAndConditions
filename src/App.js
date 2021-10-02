@@ -4,15 +4,11 @@ import Document from "./Document";
 
 function App() {
   const [content, setContent]=useState('');
-  
-  const fetchContet = () => {
+
+  useEffect(() => {
     fetch('https://jaspervdj.be/lorem-markdownum/markdown.txt')
     .then((result) => result.text())
     .then((result) => {setContent(result);});
-  };
-
-  useEffect(() => {
-    fetchContet();
   }, []);
 
   return (
