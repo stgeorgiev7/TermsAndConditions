@@ -3,13 +3,18 @@ import React, {useState, useEffect}  from "react";
 import Document from "./Document";
 
 function App() {
-  const [content, setContent]=useState('');
+  const [textcontent, setContent]=useState('');
 
   useEffect(() => {
     fetch('https://jaspervdj.be/lorem-markdownum/markdown.txt')
     .then((response) => response.text())
     .then((response) => {setContent(response);});
   }, []);
+
+  const obj = {
+    title: 'Terms and conditions',
+    content: textcontent
+  };
 
   return (
     <div className="App">
@@ -21,7 +26,8 @@ function App() {
       </section>
       <div className="container is-fullhd">
         <div className="notification">
-          <Document content={content} title={'Terms and Conditions'} />
+          <Document {...obj}
+          />
         </div>
       </div>
     </div>
