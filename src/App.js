@@ -9,7 +9,7 @@ function App() {
     fetch('https://jaspervdj.be/lorem-markdownum/markdown.txt')
     .then((response) => response.text())
     .then((response) => {setContent(response);});
-  }, []);
+  }, [content]);
 
   return (
     <div className="App">
