@@ -11,6 +11,8 @@ function App() {
     .then((response) => {setContent(response);});
   }, []);
 
+  const title = 'Terms and Conditions';
+
   return (
     <div className="App">
       <section className="hero">
@@ -21,7 +23,7 @@ function App() {
       </section>
       <div className="container is-fullhd">
         <div className="notification">
-          <Document title={'Terms and Conditions'} content={content}/>
+          <Document title={title} content={content}/>
         </div>
       </div>
     </div>

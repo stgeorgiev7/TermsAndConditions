@@ -7,9 +7,7 @@ const Document = (props) => {
         const bottom = e.target.scrollHeight - e.target.scrollTop === e.target.clientHeight;
         if (bottom) { 
             setEnabled(false); 
-        } else {
-            setEnabled(true);
-        };
+        }
       };
 
     return(
