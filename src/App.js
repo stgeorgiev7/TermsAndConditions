@@ -23,7 +23,7 @@ function App() {
       </section>
       <div className="container is-fullhd">
         <div className="notification">
-          <Document title={title} content={content}/>
+          <Document content={content} title={title} />
         </div>
       </div>
     </div>
